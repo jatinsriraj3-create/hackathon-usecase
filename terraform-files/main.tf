@@ -65,7 +65,7 @@ resource "google_compute_firewall" "allow_health_check" {
   name    = "${var.prefix}-fw-hc"
   network = google_compute_network.vpc.name
 
-  allows {
+  allow {
     protocol = "tcp"
     ports    = ["80", "443"]
   }
@@ -78,7 +78,7 @@ resource "google_compute_firewall" "allow_ssh_public" {
   name    = "${var.prefix}-fw-ssh-public"
   network = google_compute_network.vpc.name
 
-  allows {
+  allow {
     protocol = "tcp"
     ports    = ["22"]
   }
