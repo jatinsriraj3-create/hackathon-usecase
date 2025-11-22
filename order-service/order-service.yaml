@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: order-service-1
-          image: jatinsriraj3/hackathon:order-service-1
+          image: us-docker.pkg.dev/angelic-goods-465510-g3/gcr.io/order-service:latest
           ports:
             - containerPort: 8080
           readinessProbe:

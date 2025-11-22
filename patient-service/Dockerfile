@@ -5,8 +5,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install --omit=dev
 
+# Copy source code
 COPY src ./src
 
-EXPOSE 3000
+EXPOSE 4000
 
+# Run from src folder
 CMD ["node", "src/index.js"]

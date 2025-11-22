@@ -1,0 +1,14 @@
+{
+  "name": "patient-service",
+  "version": "1.0.0",
+  "description": "Hackathon Patient Service - Node.js microservice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jatin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

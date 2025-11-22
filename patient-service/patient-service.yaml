@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: patient-service1
-          image: jatinsriraj3/hackathon:patient-service1
+          image: us-docker.pkg.dev/angelic-goods-465510-g3/gcr.io/patient-service:latest
           ports:
             - containerPort: 4000   # adjust if your app listens on a different port
           readinessProbe:

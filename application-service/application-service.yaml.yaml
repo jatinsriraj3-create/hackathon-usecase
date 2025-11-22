@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: application-service
-          image: jatinsriraj3/hackathon:application-service
+          image: us-docker.pkg.dev/angelic-goods-465510-g3/gcr.io/application-service:latest
           ports:
             - containerPort: 3000
           readinessProbe:
