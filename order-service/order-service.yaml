@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service-1
+  labels:
+    app: order-service-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-service-1
+  template:
+    metadata:
+      labels:
+        app: order-service-1
+    spec:
+      containers:
+        - name: order-service-1
+          image: jatinsriraj3/hackathon:order-service-1
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service-1
+spec:
+  type: ClusterIP
+  selector:
+    app: order-service-1
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: order-service-1-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"   # use "gce" if deploying on GKE with GCP ingress
+spec:
+  rules:
+    - host: order.example.com              # replace with your domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: order-service-1
+                port:
+                  number: 80
