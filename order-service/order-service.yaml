@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: order-service-1
-          image: us-docker.pkg.dev/angelic-goods-465510-g3/gcr.io/order-service:latest
+          image: gcr.io/angelic-goods-465510-g3/order-service:latest
           ports:
             - containerPort: 8080
           readinessProbe:
