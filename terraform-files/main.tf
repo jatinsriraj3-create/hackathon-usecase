@@ -164,7 +164,7 @@ resource "google_container_cluster" "gke" {
 
   # Security features
   binary_authorization {
-    enabled = false
+    evaluation_mode = "DISABLED"
   }
 
   workload_identity_config {
@@ -192,8 +192,8 @@ resource "google_container_node_pool" "primary_nodes" {
       env = var.prefix
     }
     tags = ["gke-node"]
-    disk_type = "pd-balanced"
-    disk_size_gb = 50
+    disk_type = "pd-standard"
+    disk_size_gb = 10
     metadata = {
       disable-legacy-endpoints = "true"
     }
