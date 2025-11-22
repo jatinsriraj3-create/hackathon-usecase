@@ -42,7 +42,7 @@ variable "admin_cidr" {
 variable "node_count" {
   description = "GKE node count"
   type        = number
-  default     = 3
+  default     = 1
 }
 
 variable "node_machine" {
