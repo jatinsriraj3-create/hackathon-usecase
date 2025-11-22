@@ -5,5 +5,5 @@ public_subnet_cidr  = "10.0.0.0/24"
 private_subnet_cidr = "10.0.1.0/24"
 master_cidr       = "172.16.0.0/28"
 admin_cidr        = "192.8.243.104/32"
-node_count        = 3
+node_count        = 1
 node_machine      = "e2-standard-4"
