@@ -1,10 +1,10 @@
 {
-  "name": "patient-service",
+  "name": "appointment-service",
   "version": "1.0.0",
-  "description": "Hackathon Patient Service - Node.js microservice",
-  "main": "index.js",
+  "description": "Appointment Service - Node.js microservice",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "author": "Jatin",
   "license": "MIT",
