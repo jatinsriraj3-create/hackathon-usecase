@@ -11,4 +11,4 @@ COPY src ./src
 # EXPOSE 4000
 
 # Run from src folder
-ENTRYPOINT ["node", "src/index.js"]
+CMD ["node", "src/index.js"]
